@@ -12,6 +12,13 @@
 		59B3919521F6EAA800F9CD6E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 59B3919321F6EAA800F9CD6E /* Main.storyboard */; };
 		59B3919721F6EAA800F9CD6E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 59B3919621F6EAA800F9CD6E /* Assets.xcassets */; };
 		59B3919A21F6EAA800F9CD6E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 59B3919821F6EAA800F9CD6E /* LaunchScreen.storyboard */; };
+		59B391A421F801BB00F9CD6E /* NLSubListTitleTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59B391A321F801BB00F9CD6E /* NLSubListTitleTableViewCell.swift */; };
+		59B391A621F801CE00F9CD6E /* NLSubListItemTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59B391A521F801CE00F9CD6E /* NLSubListItemTableViewCell.swift */; };
+		59CA165C21F85BC7007580AE /* NLSubListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59CA165B21F85BC7007580AE /* NLSubListView.swift */; };
+		59E931C022041A5500108562 /* NLSubListView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 59E931BF22041A5500108562 /* NLSubListView.xib */; };
+		59E931C222042C8900108562 /* NLSubListTitleTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 59E931C122042C8900108562 /* NLSubListTitleTableViewCell.xib */; };
+		59E931C422042DCA00108562 /* NLSubListItemTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 59E931C322042DCA00108562 /* NLSubListItemTableViewCell.xib */; };
+		59E931C622043DE300108562 /* TestXibViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59E931C522043DE300108562 /* TestXibViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +29,13 @@
 		59B3919621F6EAA800F9CD6E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		59B3919921F6EAA800F9CD6E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		59B3919B21F6EAA800F9CD6E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		59B391A321F801BB00F9CD6E /* NLSubListTitleTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NLSubListTitleTableViewCell.swift; sourceTree = "<group>"; };
+		59B391A521F801CE00F9CD6E /* NLSubListItemTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NLSubListItemTableViewCell.swift; sourceTree = "<group>"; };
+		59CA165B21F85BC7007580AE /* NLSubListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NLSubListView.swift; sourceTree = "<group>"; };
+		59E931BF22041A5500108562 /* NLSubListView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NLSubListView.xib; sourceTree = "<group>"; };
+		59E931C122042C8900108562 /* NLSubListTitleTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NLSubListTitleTableViewCell.xib; sourceTree = "<group>"; };
+		59E931C322042DCA00108562 /* NLSubListItemTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NLSubListItemTableViewCell.xib; sourceTree = "<group>"; };
+		59E931C522043DE300108562 /* TestXibViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestXibViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,10 +70,17 @@
 			children = (
 				59B3918F21F6EAA800F9CD6E /* AppDelegate.swift */,
 				59B3919121F6EAA800F9CD6E /* ViewController.swift */,
+				59E931C522043DE300108562 /* TestXibViewController.swift */,
 				59B3919321F6EAA800F9CD6E /* Main.storyboard */,
 				59B3919621F6EAA800F9CD6E /* Assets.xcassets */,
 				59B3919821F6EAA800F9CD6E /* LaunchScreen.storyboard */,
 				59B3919B21F6EAA800F9CD6E /* Info.plist */,
+				59B391A321F801BB00F9CD6E /* NLSubListTitleTableViewCell.swift */,
+				59E931C122042C8900108562 /* NLSubListTitleTableViewCell.xib */,
+				59B391A521F801CE00F9CD6E /* NLSubListItemTableViewCell.swift */,
+				59E931C322042DCA00108562 /* NLSubListItemTableViewCell.xib */,
+				59CA165B21F85BC7007580AE /* NLSubListView.swift */,
+				59E931BF22041A5500108562 /* NLSubListView.xib */,
 			);
 			path = UI_DetailListTableview;
 			sourceTree = "<group>";
@@ -125,6 +146,9 @@
 				59B3919A21F6EAA800F9CD6E /* LaunchScreen.storyboard in Resources */,
 				59B3919721F6EAA800F9CD6E /* Assets.xcassets in Resources */,
 				59B3919521F6EAA800F9CD6E /* Main.storyboard in Resources */,
+				59E931C022041A5500108562 /* NLSubListView.xib in Resources */,
+				59E931C222042C8900108562 /* NLSubListTitleTableViewCell.xib in Resources */,
+				59E931C422042DCA00108562 /* NLSubListItemTableViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -135,8 +159,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				59CA165C21F85BC7007580AE /* NLSubListView.swift in Sources */,
+				59B391A621F801CE00F9CD6E /* NLSubListItemTableViewCell.swift in Sources */,
 				59B3919221F6EAA800F9CD6E /* ViewController.swift in Sources */,
 				59B3919021F6EAA800F9CD6E /* AppDelegate.swift in Sources */,
+				59E931C622043DE300108562 /* TestXibViewController.swift in Sources */,
+				59B391A421F801BB00F9CD6E /* NLSubListTitleTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -285,6 +313,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 3XYH3648U6;
 				INFOPLIST_FILE = UI_DetailListTableview/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -303,6 +332,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 3XYH3648U6;
 				INFOPLIST_FILE = UI_DetailListTableview/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

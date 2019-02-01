@@ -1,45 +1,74 @@
 //
-//  ViewController.swift
+//  NLSubListView.swift
 //  UI_DetailListTableview
 //
-//  Created by Noel on 2019/1/22.
+//  Created by Noel on 2019/1/23.
 //  Copyright © 2019 Noel. All rights reserved.
 //
 
 import UIKit
 
-class ViewController: UIViewController {
-
-    @IBOutlet weak var tableview: UITableView!
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        tableview.dataSource = self
-        tableview.delegate = self
+class NLSubListData: NSObject {
+    var titleText: NSAttributedString?
+    var subTitleText: NSAttributedString?
+    var detailItemStrings: [NSAttributedString] = []
+    init(title: NSAttributedString?, subTitle: NSAttributedString?, items: [NSAttributedString]) {
+        self.titleText = title
+        self.subTitleText = subTitle
+        self.detailItemStrings = items
     }
 }
 
-extension ViewController: UITableViewDataSource {
+class NLSubListView: UIView {
+    @IBOutlet weak var tableView: UITableView!
+    var contentView: UIView!
+    var dataModel: [NLSubListData] = []
+    
+    required init?(coder aDecoder: NSCoder) {
+        super.init(coder: aDecoder)
+        let nib = UINib(nibName: "NLSubListView", bundle: Bundle(for: type(of: self)))
+        contentView = nib.instantiate(withOwner: self, options: nil).first as? UIView
+        contentView.frame = self.bounds
+        self.addSubview(contentView)
+        self.customInitializer()
+    }
+    override func draw(_ rect: CGRect) {
+        super.draw(rect)
+    }
+    public func setupListData(list: [NLSubListData]) {
+        self.dataModel = list
+        self.tableView.reloadData()
+    }
+    private func customInitializer() {
+        let titleNib = UINib(nibName: "NLSubListTitleTableViewCell", bundle: nil)
+        tableView.register(titleNib, forCellReuseIdentifier: "NLSubListTitleTableViewCell")
+        let itemNib = UINib(nibName: "NLSubListItemTableViewCell", bundle: nil)
+        tableView.register(itemNib, forCellReuseIdentifier: "NLSubListItemTableViewCell")
+        tableView.dataSource = self
+        tableView.delegate = self
+    }
+}
+
+extension NLSubListView: UITableViewDataSource {
     func numberOfSections(in tableView: UITableView) -> Int {
-        return 2
+        return dataModel.count
     }
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        if section == 0 {
-            return 5
-        } else {
-            return 3
-        }
+        return dataModel[section].detailItemStrings.count + 1
     }
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let listData = dataModel[indexPath.section]
         if indexPath.row == 0 {
-            let cell = tableView.dequeueReusableCell(withIdentifier: "NLSubTitleCell", for: indexPath)
+            let cell = tableView.dequeueReusableCell(withIdentifier: "NLSubListTitleTableViewCell", for: indexPath) as! NLSubListTitleTableViewCell
+            cell.titleLabel.attributedText = listData.titleText
+            cell.subTitleLabel.attributedText = listData.subTitleText
             return cell
         } else {
-            let cell = tableView.dequeueReusableCell(withIdentifier: "NLSubItemCell", for: indexPath)
+            let cell = tableView.dequeueReusableCell(withIdentifier: "NLSubListItemTableViewCell", for: indexPath) as! NLSubListItemTableViewCell
+            cell.itemLabel.attributedText = listData.detailItemStrings[indexPath.row - 1]
             return cell
         }
-    }
-    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
-        return 10
+
     }
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
         let view = UIView()
@@ -48,7 +77,10 @@ extension ViewController: UITableViewDataSource {
     }
 }
 
-extension ViewController: UITableViewDelegate {
+extension NLSubListView: UITableViewDelegate {
+    func tableView(_ tableView: UITableView, estimatedHeightForHeaderInSection section: Int) -> CGFloat {
+        return 10
+    }
     func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
         let cornerRadius: CGFloat = 10.0
         cell.backgroundColor = UIColor.clear
